@@ -64,18 +64,14 @@ export function FilterBar() {
 				</Animated.View>
 			)}
 
-			<ScrollView
-				horizontal
-				showsHorizontalScrollIndicator={false}
-				className="flex-row"
-			>
+			<View className="flex flex-row gap-2 justify-center mt-6">
 				{filters.map((item) => {
 					const isActive = filter === item.value;
 					return (
 						<Pressable
 							key={item.value}
 							onPress={() => setFilter(item.value)}
-							className={`mr-2 px-4 py-2 rounded-full border ${
+							className={`mr-2 px-2 py-2 rounded-full border ${
 								isActive
 									? "bg-blue-500 border-blue-500 "
 									: "bg-transparent  border-neutral-200"
@@ -91,7 +87,7 @@ export function FilterBar() {
 						</Pressable>
 					);
 				})}
-			</ScrollView>
+			</View>
 		</View>
 	);
 }

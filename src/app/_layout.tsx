@@ -7,6 +7,7 @@ import "../global.css";
 
 export default function Layout() {
 	ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.PORTRAIT_UP);
+
 	return (
 		<GestureHandlerRootView className="flex flex-1 ">
 			<ThemeProvider>
@@ -18,7 +19,7 @@ export default function Layout() {
 					<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 					<Stack.Screen name="create" options={{ presentation: "modal" }} />
 					<Stack.Screen
-						name="note/[id]"
+						name="note/[id]/index"
 						options={{ animation: "slide_from_right" }}
 					/>
 					<Stack.Screen

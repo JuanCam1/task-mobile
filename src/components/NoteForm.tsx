@@ -12,6 +12,7 @@ import { router } from "expo-router";
 import { Check, ChevronLeft } from "lucide-react-native";
 import { STATUS_COLORS } from "@/constants/theme";
 import { useNotesStore } from "@/store/useNoteStore";
+import FormInput from "./FormInput";
 
 interface NoteFormProps {
 	noteId?: string;
@@ -80,9 +81,9 @@ export function NoteForm({ noteId, isEditing = false }: NoteFormProps) {
 			<ScrollView className="flex-1 p-4">
 				<View className="flex-row items-center justify-between mb-6">
 					<Pressable onPress={() => router.back()} className="p-2" hitSlop={8}>
-						<ChevronLeft size={24} color="#333" />
+						<ChevronLeft size={24} color="white" />
 					</Pressable>
-					<Text className="text-xl font-semibold">
+					<Text className="text-2xl font-semibold dark:text-neutral-300">
 						{isEditing ? "Edit Note" : "Create Note"}
 					</Text>
 					<Pressable
@@ -95,12 +96,13 @@ export function NoteForm({ noteId, isEditing = false }: NoteFormProps) {
 				</View>
 
 				<View className="mb-4">
-					<Text className="text-neutral-700 mb-1 font-medium">Title</Text>
-					<TextInput
+					<Text className="dark:text-neutral-300 text-neutral-600 mb-1 font-medium">
+						Titulo
+					</Text>
+					<FormInput
 						value={title}
 						onChangeText={setTitle}
-						placeholder="Enter note title"
-						className="p-3 bg-white border border-neutral-200 rounded-lg"
+						placeholder="Ingresa el título de la nota"
 					/>
 					{errors.title ? (
 						<Text className="text-error-500 mt-1 text-xs">{errors.title}</Text>
@@ -108,14 +110,16 @@ export function NoteForm({ noteId, isEditing = false }: NoteFormProps) {
 				</View>
 
 				<View className="mb-4">
-					<Text className="text-neutral-700 mb-1 font-medium">Description</Text>
-					<TextInput
+					<Text className="dark:text-neutral-300 text-neutral-600 mb-1 font-medium">
+						Descripción
+					</Text>
+					<FormInput
 						value={description}
 						onChangeText={setDescription}
-						placeholder="Enter note description"
+						placeholder="Ingresa descripción de la nota"
 						multiline
+						numberOfLines={4}
 						textAlignVertical="top"
-						className="p-3 bg-white border border-neutral-200 rounded-lg h-32"
 					/>
 					{errors.description ? (
 						<Text className="text-error-500 mt-1 text-xs">
