@@ -1,0 +1,32 @@
+{
+	"expo": {
+		"scheme": "acme",
+		"userInterfaceStyle": "automatic",
+		"orientation": "default",
+		"web": {
+			"output": "static"
+		},
+		"plugins": [
+			[
+				"expo-router",
+				{
+					"origin": "https://n"
+				}
+			]
+		],
+		"name": "task-manager",
+		"slug": "task-manager",
+		"android": {
+			"package": "com.juancamilo.taskmanager"
+		},
+		"extra": {
+			"router": {
+				"origin": "https://n"
+			},
+			"eas": {
+				"projectId": "88cf23ce-3b8c-407b-ba30-257d0c5e0140"
+			}
+		},
+		"owner": "juancam1"
+	}
+}
